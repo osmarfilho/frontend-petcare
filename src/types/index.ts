@@ -59,5 +59,5 @@ export interface Consulta extends BaseModel {
   veterinario: string;
   observacoes: string | null;
   animal_nome: string; 
-  animal: number;   
+  animal_id: number;   
 }

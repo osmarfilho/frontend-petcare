@@ -1,4 +1,3 @@
-// src/pages/Dashboard.jsx
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
@@ -13,7 +12,6 @@ export const Dashboard = () => {
 
   return (
     <div className="p-8 max-w-7xl mx-auto">
-      {/* Cabeçalho */}
       <div className="grid grid-cols-3 items-center mb-6">
         <div></div>
 
@@ -31,16 +29,11 @@ export const Dashboard = () => {
         </div>
       </div>
 
-      {/* Descrição */}
       <p className="text-gray-600 text-center mb-10">
         Bem-vindo ao PetCare! Aqui você pode cadastrar e gerenciar os animais,
         os adotantes, as consultas e as ONGs da sua organização.
       </p>
-
-      {/* Seções */}
       <div className="flex flex-col gap-10">
-
-        {/* 1. Animais */}
         <div className="p-6 bg-gray-50 rounded-lg shadow-inner">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
             Gerenciamento de Animais 🐕
@@ -61,8 +54,6 @@ export const Dashboard = () => {
             </button>
           </div>
         </div>
-
-        {/* 2. Adotantes */}
         <div className="p-6 bg-gray-50 rounded-lg shadow-inner">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
             Gerenciamento de Adotantes 🧑‍🤝‍🧑
@@ -83,8 +74,6 @@ export const Dashboard = () => {
             </button>
           </div>
         </div>
-
-        {/* 3. Consultas Veterinárias */}
         <div className="p-6 bg-gray-50 rounded-lg shadow-inner">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
             Consultas Veterinárias 🩺
@@ -105,8 +94,6 @@ export const Dashboard = () => {
             </button>
           </div>
         </div>
-
-        {/* 4. ONGs */}
         <div className="p-6 bg-gray-50 rounded-lg shadow-inner">
           <h2 className="text-2xl font-semibold text-gray-800 mb-4 text-center">
             Gerenciamento de ONGs 🏠
@@ -127,7 +114,6 @@ export const Dashboard = () => {
             </button>
           </div>
         </div>
-
       </div>
     </div>
   );

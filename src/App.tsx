@@ -14,30 +14,18 @@ import { OngForm } from "./pages/OngForm";
 function App() {
  return (
   <Routes>
-   {/* 🔓 Rota pública (Login) */}
    <Route path="/login" element={<Login />} />
-
-   {/* 🔒 Rotas protegidas (somente usuários logados) */}
    <Route element={<ProtectedRoutes />}>
-    {/* Página inicial (Dashboard) */}
     <Route path="/" element={<Dashboard />} />
-
-    {/* 🐶 Rotas de Animais */}
     <Route path="/animais" element={<AnimaisLista />} />
     <Route path="/animais/novo" element={<AnimalForm />} />
     <Route path="/animais/editar/:id" element={<AnimalForm />} />
-
-    {/* 🧑‍🤝‍🧑 Rotas de Adotantes */}
     <Route path="/adotantes" element={<AdotantesList />} />
     <Route path="/adotantes/novo" element={<AdotanteForm />} />
     <Route path="/adotantes/editar/:id" element={<AdotanteForm />} />
-
-    {/* 🩺 Rotas de Consultas Veterinárias */}
     <Route path="/consultas" element={<ConsultasLista />} />
     <Route path="/consultas/novo" element={<ConsultaForm />} />
     <Route path="/consultas/editar/:id" element={<ConsultaForm />} />
-        
-        {/* 2. Rotas de ONGs (NOVAS) 🏥 */}
     <Route path="/ongs" element={<OngList />} />
     <Route path="/ongs/novo" element={<OngForm />} />
     <Route path="/ongs/editar/:id" element={<OngForm />} />

@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { apiPrivate } from "../lib/api";
 import { toast } from "react-toastify";
 
-// Tipagem do objeto Consulta
 interface Consulta {
   id: number;
   animal: number;
-  animal_nome?: string; // retornado pelo serializer do backend
+  animal_nome?: string; 
   data: string;
   veterinario: string;
   observacoes?: string;
@@ -18,12 +17,11 @@ export const ConsultasLista = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
-  // 🔹 Busca consultas da API
   const fetchConsultas = async () => {
     try {
       setLoading(true);
       const response = await apiPrivate.get("/api/v1/consultas/");
-      const data = response.data.results || response.data; // DRF pode paginar
+      const data = response.data.results || response.data; 
       setConsultas(data);
     } catch (err) {
       console.error("Erro ao buscar consultas:", err);
@@ -37,7 +35,6 @@ export const ConsultasLista = () => {
     fetchConsultas();
   }, []);
 
-  // 🔹 Excluir consulta
   const handleDelete = async (id: number, animalNome?: string) => {
     if (!window.confirm(`Tem certeza que deseja excluir a consulta do animal "${animalNome || id}"?`)) {
       return;
@@ -63,7 +60,6 @@ export const ConsultasLista = () => {
 
   return (
     <div className="p-8 max-w-6xl mx-auto">
-      {/* Cabeçalho */}
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-gray-800">
           Consultas Veterinárias 🩺
@@ -76,7 +72,6 @@ export const ConsultasLista = () => {
         </button>
       </div>
 
-      {/* Lista */}
       {consultas.length === 0 ? (
         <div className="p-8 text-center text-gray-600 bg-gray-50 rounded-lg shadow-inner">
           Nenhuma consulta agendada ainda.
@@ -149,7 +144,6 @@ export const ConsultasLista = () => {
         </div>
       )}
 
-      {/* Botão voltar */}
       <div className="text-center mt-10">
         <button
           onClick={() => navigate("/")}
